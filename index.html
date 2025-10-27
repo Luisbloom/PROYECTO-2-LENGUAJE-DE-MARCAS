@@ -1,246 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TechWorld - Rendimiento al máximo en cada clic</title>
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    body {
-        background-color: #121212;
-        color: white;
-        display: flex; /* Importante: crea layout con barra lateral + contenido */
-    }
-
-    /* Barra lateral (nav) */
-    nav {
-        width: 220px;
-        background-color: #1e293b;
-        padding-top: 20px;
-        border-right: 1px solid #334155;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        left: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        width: 100%;
-        text-align: center;
-        margin-top: 30px;
-    }
-
-    nav a {
-        color: white;
-        text-decoration: none;
-        font-size: 15px;
-        padding: 10px 0;
-        display: block;
-        transition: background-color 0.3s, color 0.3s;
-    }
-
-    nav a:hover {
-        background-color: #334155;
-        color: #60a5fa;
-    }
-
-    /* Header */
-    header {
-        background-color: #1e293b;
-        padding: 15px 40px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid #334155;
-        position: fixed;
-        top: 0;
-        left: 220px; /* deja espacio para la barra lateral */
-        right: 0;
-        z-index: 10;
-    }
-
-    .logo {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 24px;
-        font-weight: bold;
-        color: white;
-    }
-
-    .logo img {
-        width: 30px;
-        height: 30px;
-    }
-
-    .search-bar {
-        display: flex;
-        align-items: center;
-        background-color: #334155;
-        border-radius: 25px;
-        padding: 8px 15px;
-        width: 300px;
-    }
-
-    .search-bar input {
-        background: transparent;
-        border: none;
-        color: white;
-        width: 100%;
-        padding: 5px;
-        outline: none;
-    }
-
-    .search-bar input::placeholder {
-        color: #94a3b8;
-    }
-
-    .search-icon {
-        color: #94a3b8;
-        margin-right: 8px;
-    }
-
-    .header-icons {
-        display: flex;
-        gap: 20px;
-    }
-
-    .header-icons i {
-        color: white;
-        font-size: 20px;
-        cursor: pointer;
-    }
-
-    /* Hero Section */
-    .hero {
-        height: 100vh;
-        background: url('https://via.placeholder.com/1920x1080/1e293b/ffffff?text=Background+Image') no-repeat center center;
-        background-size: cover;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 20px;
-        position: relative;
-        margin-left: 220px; /* espacio para la barra lateral */
-        margin-top: 70px; /* espacio para el header */
-    }
-
-    .hero::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.6);
-        z-index: 1;
-    }
-
-    .hero-content {
-        position: relative;
-        z-index: 2;
-        max-width: 800px;
-    }
-
-    .hero h1 {
-        font-size: 3rem;
-        margin-bottom: 20px;
-        line-height: 1.2;
-        font-weight: 700;
-    }
-
-    .hero p {
-        font-size: 1.1rem;
-        margin-bottom: 30px;
-        color: #cbd5e1;
-        line-height: 1.6;
-    }
-
-    .btn {
-        background-color: #3b82f6;
-        color: white;
-        padding: 12px 24px;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: background-color 0.3s;
-        display: inline-block;
-    }
-
-    .btn:hover {
-        background-color: #2563eb;
-    }
-
-    footer {
-        background-color: #1e293b;
-        padding: 20px;
-        text-align: center;
-        border-top: 1px solid #334155;
-        margin-left: 220px;
-    }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechWorld - Rendimiento al máximo en cada clic</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Barra lateral -->
+  <!-- Header -->
+  <header>
+    <div class="logo-container">
+      <img src="img/logo.png" alt="TechWorld Logo">
+    </div>
+
+    <div class="search-bar">
+      <span class="search-icon">🔍</span>
+      <input type="text" placeholder="Buscar productos...">
+    </div>
+
+    <div class="header-icons">
+      <i>🛒</i>
+      <i>👤</i>
+    </div>
+  </header>
+
+  <!-- Contenedor principal -->
+  <div class="main-container">
     <nav>
-        <ul>
-            <li><a href="#">Ordenadores</a></li>
-            <li><a href="#">Componentes</a></li>
-            <li><a href="#">Periféricos</a></li>
-            <li><a href="#">Gaming</a></li>
-            <li><a href="#">Ofertas</a></li>
-        </ul>
+      <ul>
+        <li><a href="#">Ordenadores</a></li>
+        <li><a href="#">Componentes</a></li>
+        <li><a href="#">Periféricos</a></li>
+        <li><a href="#">Gaming</a></li>
+        <li><a href="#">Ofertas</a></li>
+      </ul>
     </nav>
 
-    <!-- Header -->
-    <header>
-        <div class="logo">
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <line x1="2" y1="12" x2="22" y2="12"></line>
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-            </svg>
-            TechWorld
-        </div>
-
-        <div class="search-bar">
-            <span class="search-icon">🔍</span>
-            <input type="text" placeholder="Buscar productos...">
-        </div>
-
-        <div class="header-icons">
-            <i>🛒</i>
-            <i>👤</i>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
+    <div class="content">
+      <section class="hero">
         <div class="hero-content">
-            <h1>¡Rendimiento al máximo en cada clic!</h1>
-            <p>Encuentra los mejores componentes, periféricos y ordenadores para llevar tu experiencia al siguiente nivel.</p>
-            <a href="#" class="btn">Explorar Productos</a>
+          <h1>¡Rendimiento al máximo en cada clic!</h1>
+          <p>Encuentra los mejores componentes, periféricos y ordenadores para llevar tu experiencia al siguiente nivel.</p>
+          <a href="#" class="btn">Explorar Productos</a>
         </div>
-    </section>
+      </section>
+    </div>
+  </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 TechWorld. Todos los derechos reservados.</p>
-    </footer>
+  <footer>
+    © 2025 TechWorld. Todos los derechos reservados.
+  </footer>
 </body>
 </html>
