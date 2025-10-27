@@ -10,6 +10,7 @@ body {
   color: white;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Header */
@@ -25,18 +26,18 @@ header {
   z-index: 10;
 }
 
-/* Logo container: limpio, moderno, integrado */
+/* Logo container */
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 12px; /* Espacio entre icono y texto */
+  gap: 12px;
 }
 
 .logo-icon {
   width: 36px;
   height: 36px;
   object-fit: contain;
-  filter: brightness(1.2); /* Si el logo es oscuro, lo aclaramos un poco */
+  filter: brightness(1.2);
 }
 
 .logo-text {
@@ -45,7 +46,6 @@ header {
   color: white;
   letter-spacing: -0.5px;
   line-height: 1;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .search-bar {
@@ -107,40 +107,64 @@ header {
   display: flex;
   flex: 1;
   min-height: calc(100vh - 72px);
+  height: 100%;
 }
 
-/* Barra lateral */
+/* Barra lateral con Font Awesome */
 nav {
-  width: 180px;
-  background-color: #222f40;
+  width: 240px;
+  background-color: #1e293b;
   border-right: 1px solid #334155;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 24px 0;
+  height: 100%;
 }
 
 nav ul {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  width: 100%;
-  padding: 0 10px;
+  gap: 8px;
+  padding: 0 16px;
+  margin: 0;
 }
 
 nav a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
   color: #cbd5e1;
   text-decoration: none;
-  font-size: 14px;
-  padding: 8px 12px;
-  border-radius: 6px;
-  display: block;
-  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 8px;
   transition: all 0.25s ease;
+}
+
+nav a i {
+  width: 20px;
+  text-align: center;
+  font-size: 16px;
+  color: #94a3b8;
 }
 
 nav a:hover {
   background-color: #334155;
   color: #60a5fa;
+}
+
+nav a:hover i {
+  color: #60a5fa;
+}
+
+nav a.active,
+nav a.active:hover {
+  background-color: #3b82f6;
+  color: white;
+}
+
+nav a.active i {
+  color: white;
 }
 
 /* Contenido principal */
@@ -149,11 +173,12 @@ nav a:hover {
   padding: 20px 30px;
 }
 
-/* Hero */
+/* Hero: FONDO COMPLETO SIN NEGRO — PRUEBA CON IMAGEN PÚBLICA */
 .hero {
   height: 80vh;
-  background: url('https://via.placeholder.com/1920x1080/1e293b/ffffff?text=Gaming+Setup') no-repeat center center;
+  background: url('https://picsum.photos/1920/1080') no-repeat center center; /* ✅ Imagen de prueba */
   background-size: cover;
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -163,18 +188,14 @@ nav a:hover {
   border-radius: 12px;
   overflow: hidden;
   margin-bottom: 40px;
+
+  /* Sombra para texto sobre cualquier fondo */
+  color: white;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
 }
 
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.65);
-  z-index: 1;
-}
+/* Eliminamos el overlay negro */
+/* .hero::before { ... } → ¡BORRADO! */
 
 .hero-content {
   position: relative;
@@ -188,14 +209,15 @@ nav a:hover {
   margin-bottom: 16px;
   line-height: 1.2;
   font-weight: 700;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .hero p {
   font-size: 1rem;
   margin-bottom: 24px;
-  color: #cbd5e1;
+  color: #ffffff;
   line-height: 1.6;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
 }
 
 .btn {
@@ -208,13 +230,13 @@ nav a:hover {
   transition: all 0.3s ease;
   display: inline-block;
   font-size: 14px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .btn:hover {
   background-color: #2563eb;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 /* Footer */
