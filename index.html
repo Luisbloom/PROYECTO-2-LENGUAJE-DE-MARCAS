@@ -1,172 +1,212 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechWorld - Rendimiento al máximo en cada clic</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechWorld - Rendimiento al máximo en cada clic</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-        body {
-            background-color: #121212;
-            color: white;
-        }
+    body {
+        background-color: #121212;
+        color: white;
+        display: flex; /* Importante: crea layout con barra lateral + contenido */
+    }
 
-        /* Header */
-        header {
-            background-color: #1e293b;
-            padding: 15px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #334155;
-        }
+    /* Barra lateral (nav) */
+    nav {
+        width: 220px;
+        background-color: #1e293b;
+        padding-top: 20px;
+        border-right: 1px solid #334155;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 24px;
-            font-weight: bold;
-            color: white;
-        }
+    nav ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+    }
 
-        .logo img {
-            width: 30px;
-            height: 30px;
-        }
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 15px;
+        padding: 10px 0;
+        display: block;
+        transition: background-color 0.3s, color 0.3s;
+    }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-        }
+    nav a:hover {
+        background-color: #334155;
+        color: #60a5fa;
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s;
-        }
+    /* Header */
+    header {
+        background-color: #1e293b;
+        padding: 15px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #334155;
+        position: fixed;
+        top: 0;
+        left: 220px; /* deja espacio para la barra lateral */
+        right: 0;
+        z-index: 10;
+    }
 
-        nav a:hover {
-            color: #60a5fa;
-        }
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+    }
 
-        .search-bar {
-            display: flex;
-            align-items: center;
-            background-color: #334155;
-            border-radius: 25px;
-            padding: 8px 15px;
-            width: 300px;
-        }
+    .logo img {
+        width: 30px;
+        height: 30px;
+    }
 
-        .search-bar input {
-            background: transparent;
-            border: none;
-            color: white;
-            width: 100%;
-            padding: 5px;
-            outline: none;
-        }
+    .search-bar {
+        display: flex;
+        align-items: center;
+        background-color: #334155;
+        border-radius: 25px;
+        padding: 8px 15px;
+        width: 300px;
+    }
 
-        .search-bar input::placeholder {
-            color: #94a3b8;
-        }
+    .search-bar input {
+        background: transparent;
+        border: none;
+        color: white;
+        width: 100%;
+        padding: 5px;
+        outline: none;
+    }
 
-        .search-icon {
-            color: #94a3b8;
-            margin-right: 8px;
-        }
+    .search-bar input::placeholder {
+        color: #94a3b8;
+    }
 
-        .header-icons {
-            display: flex;
-            gap: 20px;
-        }
+    .search-icon {
+        color: #94a3b8;
+        margin-right: 8px;
+    }
 
-        .header-icons i {
-            color: white;
-            font-size: 20px;
-            cursor: pointer;
-        }
+    .header-icons {
+        display: flex;
+        gap: 20px;
+    }
 
-        /* Hero Section */
-        .hero {
-            height: 80vh;
-            background: url('https://via.placeholder.com/1920x1080/1e293b/ffffff?text=Background+Image') no-repeat center center;
-            background-size: cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-            position: relative;
-        }
+    .header-icons i {
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+    }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: 1;
-        }
+    /* Hero Section */
+    .hero {
+        height: 100vh;
+        background: url('https://via.placeholder.com/1920x1080/1e293b/ffffff?text=Background+Image') no-repeat center center;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        position: relative;
+        margin-left: 220px; /* espacio para la barra lateral */
+        margin-top: 70px; /* espacio para el header */
+    }
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-        }
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1;
+    }
 
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            font-weight: 700;
-        }
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+    }
 
-        .hero p {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            color: #cbd5e1;
-            line-height: 1.6;
-        }
+    .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        line-height: 1.2;
+        font-weight: 700;
+    }
 
-        .btn {
-            background-color: #3b82f6;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.3s;
-            display: inline-block;
-        }
+    .hero p {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+        color: #cbd5e1;
+        line-height: 1.6;
+    }
 
-        .btn:hover {
-            background-color: #2563eb;
-        }
+    .btn {
+        background-color: #3b82f6;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background-color 0.3s;
+        display: inline-block;
+    }
 
-        /* Footer placeholder */
-        footer {
-            background-color: #1e293b;
-            padding: 20px;
-            text-align: center;
-            margin-top: 50px;
-            border-top: 1px solid #334155;
-        }
-    </style>
+    .btn:hover {
+        background-color: #2563eb;
+    }
+
+    footer {
+        background-color: #1e293b;
+        padding: 20px;
+        text-align: center;
+        border-top: 1px solid #334155;
+        margin-left: 220px;
+    }
+</style>
 </head>
 <body>
+    <!-- Barra lateral -->
+    <nav>
+        <ul>
+            <li><a href="#">Ordenadores</a></li>
+            <li><a href="#">Componentes</a></li>
+            <li><a href="#">Periféricos</a></li>
+            <li><a href="#">Gaming</a></li>
+            <li><a href="#">Ofertas</a></li>
+        </ul>
+    </nav>
+
     <!-- Header -->
     <header>
         <div class="logo">
@@ -178,24 +218,14 @@
             TechWorld
         </div>
 
-        <nav>
-            <ul>
-                <li><a href="#">Ordenadores</a></li>
-                <li><a href="#">Componentes</a></li>
-                <li><a href="#">Periféricos</a></li>
-                <li><a href="#">Gaming</a></li>
-                <li><a href="#">Ofertas</a></li>
-            </ul>
-        </nav>
-
         <div class="search-bar">
             <span class="search-icon">🔍</span>
             <input type="text" placeholder="Buscar productos...">
         </div>
 
         <div class="header-icons">
-            <i>🛒</i> <!-- Carrito -->
-            <i>👤</i> <!-- Usuario -->
+            <i>🛒</i>
+            <i>👤</i>
         </div>
     </header>
 
@@ -208,10 +238,9 @@
         </div>
     </section>
 
-    <!-- Footer (opcional) -->
+    <!-- Footer -->
     <footer>
         <p>&copy; 2025 TechWorld. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
-
