@@ -25,28 +25,41 @@ header {
   z-index: 10;
 }
 
-/* Contenedor del logo con fondo sutil (opcional, para emular la imagen) */
+/* Logo container: limpio, moderno, integrado */
 .logo-container {
   display: flex;
   align-items: center;
-  padding: 6px 12px;
-  background-color: #17202f; /* Fondo más oscuro que el header */
-  border-radius: 6px;
+  gap: 12px; /* Espacio entre icono y texto */
 }
 
-.logo-container img {
-  width: 120px; /* Aumentado significativamente para logos horizontales */
-  height: auto;
+.logo-icon {
+  width: 36px;
+  height: 36px;
   object-fit: contain;
+  filter: brightness(1.2); /* Si el logo es oscuro, lo aclaramos un poco */
+}
+
+.logo-text {
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: -0.5px;
+  line-height: 1;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .search-bar {
   display: flex;
   align-items: center;
   background-color: #334155;
-  border-radius: 20px;
-  padding: 6px 12px;
-  width: 250px;
+  border-radius: 25px;
+  padding: 8px 16px;
+  width: 300px;
+  transition: all 0.2s ease;
+}
+
+.search-bar:hover {
+  background-color: #475569;
 }
 
 .search-bar input {
@@ -54,24 +67,39 @@ header {
   border: none;
   color: white;
   width: 100%;
-  padding: 4px;
+  padding: 6px 8px;
   outline: none;
   font-size: 14px;
+  transition: color 0.2s;
 }
 
 .search-bar input::placeholder {
   color: #94a3b8;
 }
 
+.search-bar input:focus {
+  color: white;
+}
+
+.search-icon {
+  color: #60a5fa;
+  margin-right: 8px;
+}
+
 .header-icons {
   display: flex;
-  gap: 16px;
+  gap: 20px;
 }
 
 .header-icons i {
   color: white;
-  font-size: 18px;
+  font-size: 20px;
   cursor: pointer;
+  transition: color 0.2s;
+}
+
+.header-icons i:hover {
+  color: #60a5fa;
 }
 
 /* Contenedor principal */
@@ -160,6 +188,7 @@ nav a:hover {
   margin-bottom: 16px;
   line-height: 1.2;
   font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 .hero p {
@@ -172,17 +201,20 @@ nav a:hover {
 .btn {
   background-color: #3b82f6;
   color: white;
-  padding: 10px 22px;
-  border-radius: 6px;
+  padding: 12px 24px;
+  border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
   display: inline-block;
   font-size: 14px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .btn:hover {
   background-color: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 /* Footer */
