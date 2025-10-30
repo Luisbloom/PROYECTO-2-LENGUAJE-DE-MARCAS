@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TechWorld - Rendimiento al máximo en cada clic</title>
+  <title>CITECH - Rendimiento al máximo en cada clic</title>
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -16,7 +16,7 @@
   <header class="header">
     <div class="logo-container">
       <img src="img/logo.png" alt="Logo de TechWorld" class="logo-icon">
-      <span class="logo-text">TechWorld</span>
+      <span class="logo-text">CITECH</span>
     </div>
 
     <div class="search-bar">
@@ -32,7 +32,7 @@
 
   <!-- Contenedor principal: barra lateral + contenido -->
   <div class="main-container">
-    <!-- Barra lateral FIJA (igual que antes, sin cambios de estilo) -->
+    <!-- Barra lateral FIJA -->
     <nav class="sidebar">
       <ul>
         <li><a href="#"><i class="fa-solid fa-computer"></i> Ordenadores de mesa</a></li>
@@ -55,7 +55,9 @@
 
     <!-- Contenido principal -->
     <main class="content">
-      <section class="hero">
+
+      <!-- Hero con imagen de fondo -->
+      <section class="hero" style="background-image: url('img/fondo.png');">
         <div class="hero-content">
           <h1>¡Rendimiento al máximo en cada clic!</h1>
           <p>Encuentra los mejores componentes, periféricos y ordenadores para llevar tu experiencia al siguiente nivel.</p>
@@ -63,50 +65,90 @@
         </div>
       </section>
 
+      <!-- Banners promocionales -->
+      <section class="promo-banners">
+        <div class="banner">
+          <img src="img/imagenparadeslizar2.webp" alt="Promoción 1">
+        </div>
+        <div class="banner">
+          <img src="img/banner2.webp" alt="Promoción 2">
+      </section>
+
       <!-- Productos Destacados -->
       <section class="featured-products">
         <h2>Productos Destacados</h2>
         <div class="product-grid">
           <div class="product-card">
-            <img src="img/pcgaming.jpg" alt="PC Gaming Titán">
+            <img src="img/PC.webp" alt="PC Gaming Titán">
             <h3>PC Gaming Titán</h3>
-            <p class="category">Ordenadores</p>
+            <p class="category">Ordenadores de mesa</p>
             <p class="price">1899,99 €</p>
             <a href="#" class="btn-secondary">Ver más</a>
           </div>
           <div class="product-card">
-            <img src="img/gpu.jpg" alt="Tarjeta Gráfica RTX 4080">
+            <img src="img/grafica.webp" alt="Tarjeta Gráfica RTX 4080">
             <h3>Tarjeta Gráfica RTX 4080</h3>
-            <p class="category">Componentes</p>
+            <p class="category">Tarjetas Gráficas</p>
             <p class="price">1299,00 €</p>
             <a href="#" class="btn-secondary">Ver más</a>
           </div>
           <div class="product-card">
-            <img src="img/teclado.jpg" alt="Teclado Mecánico K-Pro">
+            <img src="img/teclado.webp" alt="Teclado Mecánico K-Pro">
             <h3>Teclado Mecánico K-Pro</h3>
-            <p class="category">Periféricos</p>
+            <p class="category">Teclados</p>
             <p class="price">149,50 €</p>
             <a href="#" class="btn-secondary">Ver más</a>
           </div>
           <div class="product-card">
-            <img src="img/monitor.jpg" alt="Monitor UltraWide Curvo 34">
+            <img src="img/monitor.webp" alt="Monitor UltraWide Curvo 34">
             <h3>Monitor UltraWide Curvo 34"</h3>
-            <p class="category">Periféricos</p>
+            <p class="category">Monitores</p>
             <p class="price">799,00 €</p>
             <a href="#" class="btn-secondary">Ver más</a>
           </div>
           <div class="product-card">
-            <img src="img/ssd.jpg" alt="SSD NVMe 2TB Blaze">
+            <img src="img/almacenamiento.webp" alt="SSD NVMe 2TB Blaze">
             <h3>SSD NVMe 2TB Blaze</h3>
-            <p class="category">Componentes</p>
+            <p class="category">Almacenamiento</p>
             <p class="price">219,99 €</p>
             <a href="#" class="btn-secondary">Ver más</a>
           </div>
           <div class="product-card">
-            <img src="img/raton.jpg" alt="Ratón Gaming G-Force">
+            <img src="img/raton.webp" alt="Ratón Gaming G-Force">
             <h3>Ratón Gaming Inalámbrico G-Force</h3>
             <p class="category">Gaming</p>
             <p class="price">89,99 €</p>
+            <a href="#" class="btn-secondary">Ver más</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Componentes Esenciales -->
+      <section class="components">
+        <h2>Componentes Esenciales</h2>
+        <div class="component-grid">
+          <div class="component-card">
+            <img src="img/procesador.webp" alt="Procesador Intel Core i9">
+            <h3>Procesador Intel Core i9</h3>
+            <p class="price">599,00 €</p>
+            <a href="#" class="btn-secondary">Ver más</a>
+          </div>
+          <div class="component-card">
+            <img src="img/placa base.webp" alt="Placa Base Z790">
+            <h3>Placa Base Z790</h3>
+            <p class="price">349,00 €</p>
+            <a href="#" class="btn-secondary">Ver más</a>
+          </div>
+          <div class="component-card">
+            <img src="img/ram.webp" alt="Memoria RAM DDR5 32GB">
+            <h3>RAM DDR5 32GB</h3>
+            <p class="price">199,00 €</p>
+            <a href="#" class="btn-secondary">Ver más</a>
+          </div>
+          <div class="component-card">
+            <img src="img/fuente de alimentacion.webp" alt="Fuente de Alimentación 850W">
+            <h3>Fuente de Alimentación 850W</h3>
+            <p class="price">149,99 €</p>
             <a href="#" class="btn-secondary">Ver más</a>
           </div>
         </div>
@@ -117,7 +159,7 @@
         <h2>Ofertas de la Semana</h2>
         <div class="offer-card">
           <span class="offer-label">-20%</span>
-          <img src="img/portatil.jpg" alt="Portátil Gaming Predator 15">
+          <img src="img/PC.webp" alt="Portátil Gaming Predator 15">
           <div class="offer-info">
             <h3>Portátil Gaming Predator 15</h3>
             <p class="old-price">1499,00 €</p>
@@ -126,6 +168,7 @@
           </div>
         </div>
       </section>
+
     </main>
   </div>
 

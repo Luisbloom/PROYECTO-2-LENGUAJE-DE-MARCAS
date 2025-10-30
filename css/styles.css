@@ -219,14 +219,28 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
-/* FOOTER */
-.footer {
-  background-color: #222f40;
-  padding: 16px;
-  text-align: center;
-  color: #cbd5e1;
-  font-size: 14px;
-  border-top: 1px solid #334155;
+/* ================================
+   BANNERS PROMOCIONALES
+=================================== */
+.promo-banners {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap; /* Permite apilar en móviles */
+  margin-bottom: 40px;
+}
+
+.promo-banners .banner {
+  flex: 1 1 45%; /* Cada banner ocupa aproximadamente la mitad */
+  max-width: 500px; /* Limita tamaño máximo para que no sea gigante */
+}
+
+.promo-banners .banner img {
+  width: 100%;    /* Se ajusta al tamaño del banner */
+  height: auto;   /* Mantiene proporciones */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  display: block;
 }
 
 /* ================================
@@ -304,6 +318,61 @@ body {
 }
 
 /* ================================
+   COMPONENTES ESENCIALES
+=================================== */
+.components {
+  padding: 50px 30px;
+  background-color: #0f172a;
+  border-radius: 12px;
+  margin-top: 40px;
+}
+
+.components h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #60a5fa;
+  margin-bottom: 30px;
+}
+
+.component-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.component-card {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.component-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.2);
+}
+
+.component-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.component-card h3 {
+  color: #e2e8f0;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.component-card .price {
+  color: #38bdf8;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* ================================
    OFERTAS
 =================================== */
 .offers {
@@ -371,4 +440,14 @@ body {
   color: #22c55e;
   font-weight: bold;
   margin-bottom: 20px;
+}
+
+/* FOOTER */
+.footer {
+  background-color: #222f40;
+  padding: 16px;
+  text-align: center;
+  color: #cbd5e1;
+  font-size: 14px;
+  border-top: 1px solid #334155;
 }
