@@ -3,113 +3,125 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CITECH - Tecnología al máximo rendimiento</title>
+  <title>CITECH - Soluciones Tecnológicas Innovadoras</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    body {
-      background-color: #121212;
-      color: white;
-      overflow-x: hidden;
-    }
-    header {
-      background-color: #1e293b;
-      padding: 16px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #334155;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 22px;
-      font-weight: 700;
-    }
-    .logo img {
-      width: 36px;
-      height: 36px;
-      object-fit: contain;
-      filter: brightness(1.2);
-    }
-    .hero {
-      height: 90vh;
-      background: url('img/fondo.png') center/cover no-repeat;
-      background-attachment: fixed;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
-      padding: 0 20px;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      max-width: 800px;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-      max-width: 700px;
-      line-height: 1.6;
-    }
-    .btn {
-      background-color: #3b82f6;
-      color: white;
-      padding: 14px 32px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-    .btn:hover {
-      background-color: #2563eb;
-      transform: translateY(-3px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
-    }
-    footer {
-      background-color: #222f40;
-      padding: 20px;
-      text-align: center;
-      color: #cbd5e1;
-      font-size: 14px;
-      border-top: 1px solid #334155;
-    }
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2.2rem; }
-      .hero p { font-size: 1rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
-  <header>
-    <div class="logo">
-      <img src="img/logo.png" alt="Logo de CITECH" />
-      <span>CITECH</span>
-    </div>
-    <a href="tienda.html" class="btn" style="padding: 8px 16px; font-size: 1rem;">Ir a la Tienda</a>
+  <!-- HEADER -->
+  <header class="header" id="inicio">
+    <a href="index.html" class="logo-container">
+      <img src="img/logo.png" alt="Logo de CITECH" class="logo-icon" />
+      <span class="logo-text">CITECH</span>
+    </a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#quienes-somos">Quiénes Somos</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#equipo">Equipo</a></li>
+        <li><a href="tienda.html">Tienda</a></li>
+        <li><a href="chatbot.html">Asistente IA</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <section class="hero">
-    <h1>¡Rendimiento al máximo en cada clic!</h1>
-    <p>En CITECH ofrecemos los mejores componentes, periféricos y sistemas listos para gaming, trabajo y creación.</p>
-    <a href="tienda.html" class="btn">Explorar la Tienda</a>
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h1>Tecnología hecha para rendir</h1>
+      <p>Soluciones personalizadas para gamers, creadores y profesionales exigentes.</p>
+      <a href="#quienes-somos" class="btn">Conócenos</a>
+    </div>
   </section>
 
-  <footer>
-    <p>© 2025 <strong>CITECH</strong>. Tecnología hecha para rendir.</p>
+  <!-- QUIÉNES SOMOS -->
+  <section class="about" id="quienes-somos">
+    <h2>¿Quiénes Somos?</h2>
+    <div class="about-content">
+      <p>
+        Somos <strong>CITECH</strong>, una startup tecnológica fundada por dos apasionados del hardware y el software:
+        <strong>Luis Miguel Pablos</strong> y <strong>Mario Rodríguez</strong>.
+      </p>
+      <p>
+        Nuestro objetivo es ofrecer soluciones tecnológicas personalizadas para gamers, creadores de contenido,
+        estudiantes y profesionales que exigen el máximo rendimiento de sus equipos.
+      </p>
+      <p>
+        Creemos que la tecnología debe adaptarse a las personas, no al revés.
+      </p>
+    </div>
+  </section>
+
+  <!-- EQUIPO -->
+  <section class="team" id="equipo">
+    <h2>Nuestro Equipo</h2>
+    <div class="team-grid">
+      <div class="team-member">
+        <img src="img/luis.webp" alt="Luis Miguel Pablos - Co-Fundador" />
+        <h3>Luis Miguel Pablos</h3>
+        <p class="role">Co-Fundador & Desarrollo</p>
+      </div>
+      <div class="team-member">
+        <img src="img/mario.webp" alt="Mario Rodríguez - Co-Fundador" />
+        <h3>Mario Rodríguez</h3>
+        <p class="role">Co-Fundador & Diseño</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="services" id="servicios">
+    <h2>Nuestros Servicios</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <i class="fas fa-laptop-code"></i>
+        <h3>Montaje a Medida</h3>
+        <p>PCs personalizadas según tus necesidades: gaming, edición, diseño 3D o productividad.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-tools"></i>
+        <h3>Mantenimiento</h3>
+        <p>Limpieza, actualización y optimización para alargar la vida útil de tu equipo.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-headset"></i>
+        <h3>Soporte Técnico</h3>
+        <p>Asistencia remota o presencial para resolver cualquier problema técnico.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-rocket"></i>
+        <h3>Consultoría IT</h3>
+        <p>Asesoramiento profesional para elegir los mejores componentes y configuraciones.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contact" id="contacto">
+    <h2>Contáctanos</h2>
+    <div class="contact-container">
+      <form class="contact-form" action="#" method="post">
+        <input type="text" name="nombre" placeholder="Tu nombre" required />
+        <input type="email" name="email" placeholder="Tu email" required />
+        <textarea name="mensaje" placeholder="Tu mensaje" rows="5" required></textarea>
+        <button type="submit" class="btn">Enviar Mensaje</button>
+      </form>
+      <div class="contact-info">
+        <p><i class="fas fa-envelope"></i> contacto@citech.es</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 <strong>CITECH</strong>. Startup tecnológica.</p>
+    <p>
+      <a href="tienda.html">Tienda</a> • 
+      <a href="chatbot.html">Asistente IA</a>
+    </p>
+    <p>Diseñado por Luis Miguel Pablos y Mario Rodríguez</p>
   </footer>
 
 </body>
