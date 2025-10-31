@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CITECH - Tienda</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header class="header">
+    <!-- Menú hamburguesa para móvil -->
+    <input type="checkbox" id="sidebar-toggle" class="sidebar-toggle" />
+    <label for="sidebar-toggle" class="menu-btn">☰</label>
+
+    <!-- Logo enlazado a la página principal -->
+    <a href="index.html" class="logo-container">
+      <img src="img/logo.png" alt="Logo de CITECH" class="logo-icon" />
+      <span class="logo-text">CITECH</span>
+    </a>
+
+    <div class="search-bar">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" placeholder="Buscar productos..." aria-label="Buscar productos" />
+    </div>
+
+    <div class="header-icons">
+      <i class="fas fa-shopping-cart icon" aria-label="Carrito"></i>
+      <i class="fas fa-user icon" aria-label="Usuario"></i>
+    </div>
+  </header>
+
+  <div class="main-container">
+    <nav class="sidebar">
+      <ul>
+        <li><a href="#"><i class="fa-solid fa-computer"></i> Ordenadores de mesa</a></li>
+        <li><a href="#"><i class="fas fa-laptop"></i> Portátiles</a></li>
+        <li><a href="#"><i class="fas fa-microchip"></i> Procesadores</a></li>
+        <li><a href="#"><i class="fas fa-memory"></i> Memoria RAM</a></li>
+        <li><a href="#"><i class="fa-solid fa-battery-three-quarters"></i> Placa Base</a></li>
+        <li><a href="#"><i class="fas fa-hdd"></i> Almacenamiento</a></li>
+        <li><a href="#"><i class="fas fa-video"></i> Tarjetas Gráficas</a></li>
+        <li><a href="#"><i class="fas fa-keyboard"></i> Teclados</a></li>
+        <li><a href="#"><i class="fas fa-mouse"></i> Ratones</a></li>
+        <li><a href="#"><i class="fas fa-display"></i> Monitores</a></li>
+        <li><a href="#"><i class="fas fa-headphones"></i> Audio</a></li>
+        <li><a href="#"><i class="fas fa-mobile-alt"></i> Móviles y Tablets</a></li>
+        <li><a href="#"><i class="fas fa-gamepad"></i> Accesorios Gaming</a></li>
+        <li><a href="#"><i class="fas fa-tags"></i> Ofertas</a></li>
+        <li><a href="#"><i class="fas fa-fire"></i> Gangas del Día</a></li>
+      </ul>
+    </nav>
+
+    <main class="content">
+
+      <section class="promo-banners">
+        <div class="banner">
+          <img src="img/imagenparadeslizar2.webp" alt="Promoción 1" />
+        </div>
+        <div class="banner">
+          <img src="img/banner2.webp" alt="Promoción 2" />
+        </div>
+      </section>
+
+      <section class="featured-products">
+        <h2>Productos Destacados</h2>
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="img/PC.webp" alt="PC Gaming Titán" />
+            <h3>PC Gaming Titán</h3>
+            <p class="category">Ordenadores de mesa</p>
+            <p class="price">1899,99 €</p>
+            <a href="#" class="btn-secondary">Ver más</a>
+          </div>
+          <div class="product-card">
+            <img src="img/grafica.webp" alt="Tarjeta Gráfica RTX 4080" />
+            <h3>Tarjeta Gráfica RTX 4080</h3>
+            <p class="category">Tarjetas Gráficas</p>
+            <p class="price">1299,00 €</p>
+            <a href="#" class="btn-secondary">Ver más</a>
+          </div>
+          <div class="product-card">
+            <img src="img/teclado.webp" alt="Teclado Mecánico K-Pro" />
+            <h3>Teclado Mecánico K-Pro</h3>
+            <p class="category">Teclados</p>
+            <p class="price">149,50 €</p>
+            <a href="#" class="btn-secondary">Ver más</a>
+          </div>
+          <div class="product-card">
+            <img src="img/monitor.webp" alt="Monitor UltraWide Curvo 34" />
+            <h3>Monitor UltraWide Curvo 34"</h3>
+            <p class="category">Monitores</p>
+            <p class="price">799,00 €</p>
+            <a href="#" class="btn-secondary">Ver más</a>
+          </div>
+          <div class="product-card">
+            <img src="img/almacenamiento.webp" alt="SSD NVMe 2TB Blaze" />
+            <h3>SSD NVMe 2TB Blaze</h3>
+            <p class="category">Almacenamiento</p>
+            <p class="price">219,99 €</p>
+            <a href="#" class="btn-secondary">Ver más</a>
+          </div>
+          <div class="product-card">
+            <img src="img/raton.webp" alt="Ratón Gaming G-Force" />
+            <h3>Ratón Gaming Inalámbrico G-Force</h3>
+            <p class="category">Ratones</p>
+            <p class="price">89,99 €</p>
+            <a href="#" class="btn-secondary">Ver más</a>
+          </div>
+          <div class="product-card">
+            <img src="img/auriculares.webp" alt="Auriculares Gaming HX7" />
+            <h3>Auriculares Gaming HX7</h3>
+            <p class="category">Audio</p>
+            <p class="price">129,99 €</p>
+            <a href="#" class="btn-secondary">Ver más</a>
+          </div>
+          <div class="product-card">
+            <img src="img/tablet.webp" alt="Tablet Pro 11”" />
+            <h3>Tablet Pro 11”</h3>
+            <p class="category">Móviles y Tablets</p>
+            <p class="price">649,00 €</p>
+            <a href="#" class="btn-secondary">Ver más</a>
+          </div>
+          <div class="product-card">
+            <img src="img/silla.webp" alt="Silla Ergonómica Gamer" />
+            <h3>Silla Ergonómica Gamer</h3>
+            <p class="category">Accesorios Gaming</p>
+            <p class="price">299,00 €</p>
+            <a href="#" class="btn-secondary">Ver más</a>
+          </div>
+          <div class="product-card">
+            <img src="img/ventilador.webp" alt="Ventilador RGB 120mm" />
+            <h3>Ventilador RGB 120mm</h3>
+            <p class="category">Refrigeración</p>
+            <p class="price">24,99 €</p>
+            <a href="#" class="btn-secondary">Ver más</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="components">
+        <h2>Componentes Esenciales</h2>
+        <div class="component-grid">
+          <div class="component-card">
+            <img src="img/procesador.webp" alt="Procesador Intel Core i9" />
+            <h3>Procesador Intel Core i9</h3>
+            <p class="price">599,00 €</p>
+            <a href="#" class="btn-secondary">Ver más</a>
+          </div>
+          <div class="component-card">
+            <img src="img/placa base.webp" alt="Placa Base Z790" />
+            <h3>Placa Base Z790</h3>
+            <p class="price">349,00 €</p>
+            <a href="#" class="btn-secondary">Ver más</a>
+          </div>
+          <div class="component-card">
+            <img src="img/ram.webp" alt="Memoria RAM DDR5 32GB" />
+            <h3>RAM DDR5 32GB</h3>
+            <p class="price">199,00 €</p>
+            <a href="#" class="btn-secondary">Ver más</a>
+          </div>
+          <div class="component-card">
+            <img src="img/fuente de alimentacion.webp" alt="Fuente de Alimentación 850W" />
+            <h3>Fuente de Alimentación 850W</h3>
+            <p class="price">149,99 €</p>
+            <a href="#" class="btn-secondary">Ver más</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="offers">
+        <h2>Ofertas de la Semana</h2>
+        <div class="offers-grid">
+          <div class="offer-card">
+            <span class="offer-label">-20%</span>
+            <img src="img/PC.webp" alt="Portátil Gaming Predator 15" />
+            <div class="offer-info">
+              <h3>Portátil Gaming Predator 15</h3>
+              <p class="old-price">1499,00 €</p>
+              <p class="new-price">1199,00 €</p>
+              <a href="#" class="btn">Ver Oferta</a>
+            </div>
+          </div>
+          <div class="offer-card">
+            <span class="offer-label">-25%</span>
+            <img src="img/auriculares.webp" alt="Auriculares Inalámbricos ProSound X" />
+            <div class="offer-info">
+              <h3>Auriculares ProSound X</h3>
+              <p class="old-price">169,99 €</p>
+              <p class="new-price">127,49 €</p>
+              <a href="#" class="btn">Ver Oferta</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p>© 2025 <strong>CITECH</strong>. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,4 +1,4 @@
-/* Reset y tipografía base */
+/* === RESET Y TIPOGRAFÍA === */
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +15,7 @@ body {
   overflow-x: hidden;
 }
 
-/* HEADER */
+/* === HEADER === */
 .header {
   background-color: #1e293b;
   padding: 16px 30px;
@@ -47,17 +47,32 @@ body {
   color: white;
 }
 
+/* Menú hamburguesa para móvil */
+.menu-btn {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  z-index: 101;
+}
+
+.sidebar-toggle {
+  display: none;
+}
+
 .search-bar {
   display: flex;
   align-items: center;
   background-color: #334155;
   border-radius: 25px;
   padding: 8px 16px;
-  width: 280px;
-  transition: background-color 0.3s ease;
+  width: 40px;
+  overflow: hidden;
+  transition: width 0.3s ease, background-color 0.3s ease;
 }
 
-.search-bar:hover {
+.search-bar:focus-within {
+  width: 280px;
   background-color: #475569;
 }
 
@@ -69,6 +84,12 @@ body {
   padding: 6px 8px;
   outline: none;
   font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.search-bar:focus-within input {
+  opacity: 1;
 }
 
 .search-bar input::placeholder {
@@ -79,6 +100,7 @@ body {
   color: #60a5fa;
   margin-right: 8px;
   font-size: 14px;
+  flex-shrink: 0;
 }
 
 .header-icons {
@@ -97,7 +119,7 @@ body {
   color: #60a5fa;
 }
 
-/* === BARRA LATERAL FIJA (sin scripts) === */
+/* === SIDEBAR === */
 .sidebar {
   width: 260px;
   background-color: #1e293b;
@@ -143,31 +165,58 @@ body {
   color: #60a5fa;
 }
 
-.sidebar a.active {
-  background-color: #3b82f6;
-  color: white;
-}
-
-.sidebar a.active i {
-  color: white;
-}
-
-/* CONTENEDOR PRINCIPAL */
+/* === MAIN CONTAINER === */
 .main-container {
   display: flex;
   flex: 1;
-  height: calc(100vh - 72px); /* altura total menos header */
+  height: calc(100vh - 72px);
   overflow: hidden;
 }
 
-/* CONTENIDO */
 .content {
   flex: 1;
   padding: 30px;
   overflow-y: auto;
 }
 
-/* HERO */
+/* Responsive: móvil */
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    height: 100vh;
+    z-index: 99;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar-toggle:checked ~ .main-container .sidebar {
+    left: 0;
+  }
+
+  .main-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  .search-bar {
+    width: 36px;
+  }
+
+  .search-bar:focus-within {
+    width: 200px;
+  }
+}
+
+/* === HERO === */
 .hero {
   height: 65vh;
   background: url('../img/fondo.png') center/cover no-repeat;
@@ -201,16 +250,21 @@ body {
   line-height: 1.6;
 }
 
+/* === BOTONES === */
+.btn, .btn-secondary {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  text-align: center;
+}
+
 .btn {
   background-color: #3b82f6;
   color: white;
   padding: 12px 24px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  display: inline-block;
 }
 
 .btn:hover {
@@ -219,41 +273,82 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
-/* ================================
-   BANNERS PROMOCIONALES
-=================================== */
+.btn-secondary {
+  background-color: #2563eb;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+}
+
+.btn-secondary:hover {
+  background-color: #1d4ed8;
+}
+
+/* === BANNERS PROMOCIONALES === */
 .promo-banners {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap; /* Permite apilar en móviles */
-  margin-bottom: 40px;
+  position: relative;
+  height: 260px;
+  max-width: 700px;
+  margin: 0 auto 50px;
 }
 
 .promo-banners .banner {
-  flex: 1 1 45%; /* Cada banner ocupa aproximadamente la mitad */
-  max-width: 500px; /* Limita tamaño máximo para que no sea gigante */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  animation: fadeBanner 10s infinite;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 }
 
 .promo-banners .banner img {
-  width: 100%;    /* Se ajusta al tamaño del banner */
-  height: auto;   /* Mantiene proporciones */
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* ================================
-   PRODUCTOS DESTACADOS
-=================================== */
-.featured-products {
+.promo-banners .banner:nth-child(2) {
+  animation-delay: 5s;
+}
+
+@keyframes fadeBanner {
+  0%, 100% { opacity: 0; }
+  10%, 90% { opacity: 1; }
+}
+
+/* === ANIMACIONES DE ENTRADA === */
+.featured-products,
+.components,
+.offers {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 0.8s forwards;
+}
+
+.featured-products { animation-delay: 0.2s; }
+.components { animation-delay: 0.4s; }
+.offers { animation-delay: 0.6s; }
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === SECCIONES === */
+.featured-products, .components {
   padding: 50px 30px;
   background-color: #0f172a;
   border-radius: 12px;
   margin-top: 40px;
 }
 
-.featured-products h2 {
+.featured-products h2, .components h2 {
   text-align: center;
   font-size: 2rem;
   color: #60a5fa;
@@ -266,7 +361,13 @@ body {
   gap: 24px;
 }
 
-.product-card {
+.component-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.product-card, .component-card {
   background-color: #1e293b;
   border: 1px solid #334155;
   border-radius: 10px;
@@ -275,18 +376,21 @@ body {
   transition: all 0.3s ease;
 }
 
-.product-card:hover {
+.product-card:hover, .component-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 8px 20px rgba(59, 130, 246, 0.2);
+  border-color: #3b82f6;
 }
 
-.product-card img {
+.product-card img, .component-card img {
   width: 100%;
   border-radius: 8px;
   margin-bottom: 15px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
 
-.product-card h3 {
+.product-card h3, .component-card h3 {
   color: #e2e8f0;
   margin-bottom: 8px;
   font-size: 1.1rem;
@@ -303,78 +407,7 @@ body {
   margin: 10px 0;
 }
 
-.btn-secondary {
-  display: inline-block;
-  background-color: #2563eb;
-  color: #fff;
-  padding: 8px 16px;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.btn-secondary:hover {
-  background-color: #1d4ed8;
-}
-
-/* ================================
-   COMPONENTES ESENCIALES
-=================================== */
-.components {
-  padding: 50px 30px;
-  background-color: #0f172a;
-  border-radius: 12px;
-  margin-top: 40px;
-}
-
-.components h2 {
-  text-align: center;
-  font-size: 2rem;
-  color: #60a5fa;
-  margin-bottom: 30px;
-}
-
-.component-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 24px;
-}
-
-.component-card {
-  background-color: #1e293b;
-  border: 1px solid #334155;
-  border-radius: 10px;
-  padding: 20px;
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-.component-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.2);
-}
-
-.component-card img {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
-
-.component-card h3 {
-  color: #e2e8f0;
-  margin-bottom: 8px;
-  font-size: 1.1rem;
-}
-
-.component-card .price {
-  color: #38bdf8;
-  font-weight: bold;
-  margin: 10px 0;
-}
-
-/* ================================
-   OFERTAS
-=================================== */
+/* === OFERTAS === */
 .offers {
   padding: 60px 30px;
   text-align: center;
@@ -389,14 +422,20 @@ body {
   margin-bottom: 40px;
 }
 
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .offer-card {
   position: relative;
   background-color: #1e293b;
   border: 1px solid #334155;
   border-radius: 12px;
   padding: 30px;
-  max-width: 600px;
-  margin: 0 auto;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
 }
@@ -422,6 +461,8 @@ body {
   width: 100%;
   border-radius: 10px;
   margin-bottom: 20px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
 
 .offer-info h3 {
@@ -439,10 +480,10 @@ body {
   font-size: 1.5rem;
   color: #22c55e;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin: 12px 0;
 }
 
-/* FOOTER */
+/* === FOOTER === */
 .footer {
   background-color: #222f40;
   padding: 16px;
