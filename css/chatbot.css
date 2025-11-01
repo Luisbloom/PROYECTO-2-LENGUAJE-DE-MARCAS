@@ -1,0 +1,218 @@
+/* =====================================================
+   CITECH IA - Estilo futurista de chat sin JS
+   ===================================================== */
+
+   :root {
+    --bg1: #071033;
+    --bg2: #071a4b;
+    --accent1: #00f0ff;
+    --accent2: #7c4dff;
+    --text: #e8f6ff;
+    --muted: #9aa9c7;
+    --bot-bg: rgba(255, 255, 255, 0.06);
+    --user-bg: linear-gradient(90deg, rgba(0,240,255,0.12), rgba(124,77,255,0.12));
+  }
+  
+  /* ======== Base ======== */
+  body {
+    margin: 0;
+    font-family: "Inter", ui-sans-serif, system-ui;
+    color: var(--text);
+    background: linear-gradient(135deg, var(--bg1), var(--bg2));
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+  }
+  
+  /* ======== Header ======== */
+  .chat-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 24px;
+    position: fixed;
+    top: 0;
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+  }
+  
+  .back-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  .back-button:hover {
+    color: var(--accent1);
+  }
+  
+  .chat-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    color: var(--accent1);
+    letter-spacing: 0.5px;
+  }
+  
+  /* ======== Fondo ======== */
+  .chat-wrapper {
+    margin-top: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .chat-container {
+    width: 90%;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  /* ======== Mensajes ======== */
+  .messages {
+    flex: 1;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+  
+  .message {
+    max-width: 80%;
+    padding: 14px 18px;
+    border-radius: 16px;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    animation: fadeIn 0.6s ease both;
+  }
+  
+  .message.bot {
+    align-self: flex-start;
+    background: var(--bot-bg);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    box-shadow: 0 4px 12px rgba(0, 240, 255, 0.05);
+  }
+  
+  .message.user {
+    align-self: flex-end;
+    background: var(--user-bg);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 4px 12px rgba(124, 77, 255, 0.1);
+  }
+  
+  /* enlaces dentro del mensaje */
+  .message a {
+    color: var(--accent1);
+    text-decoration: none;
+  }
+  .message a:hover {
+    text-decoration: underline;
+  }
+  
+  /* ======== Área de entrada ======== */
+  .input-area {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 14px;
+    background: rgba(255, 255, 255, 0.02);
+  }
+  
+  .input-area textarea {
+    flex: 1;
+    resize: none;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 8px 10px;
+  }
+  
+  .send-btn {
+    background: linear-gradient(90deg, var(--accent1), var(--accent2));
+    border: none;
+    color: #fff;
+    border-radius: 10px;
+    width: 46px;
+    height: 46px;
+    margin-left: 10px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+  }
+  
+  .send-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(124, 77, 255, 0.4);
+  }
+  
+  /* ======== Animaciones ======== */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* ======== Scrollbar ======== */
+  .messages::-webkit-scrollbar {
+    width: 6px;
+  }
+  .messages::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--accent1), var(--accent2));
+    border-radius: 8px;
+  }
+  
+  /* ======== Responsive ======== */
+  @media (max-width: 600px) {
+    .chat-container {
+      width: 95%;
+      border-radius: 12px;
+    }
+    .message {
+      max-width: 90%;
+      font-size: 0.9rem;
+    }
+    .chat-header {
+      padding: 10px 16px;
+    }
+  }
+  /* ======== Logo en el header ======== */
+.chat-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    color: var(--accent1);
+    letter-spacing: 0.5px;
+  }
+  
+  .chat-logo {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0, 240, 255, 0.2);
+  }
+  

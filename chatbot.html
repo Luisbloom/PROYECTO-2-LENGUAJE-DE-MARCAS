@@ -4,66 +4,76 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CITECH IA</title>
+  <link rel="icon" type="image/png" href="img/logo.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/chatbot.css" />
 </head>
 <body>
 
-  <header class="chat-header">
-    <a href="index.html" class="back-button" aria-label="Volver">
-      <i class="fas fa-arrow-left"></i>
-      <span>Volver</span>
-    </a>
-  </header>
+<!-- HEADER -->
+<header class="chat-header">
+  <a href="index.html" class="back-button" aria-label="Volver">
+    <i class="fas fa-arrow-left"></i>
+    <span>Volver</span>
+  </a>
 
-  <div class="chat-container">
-    <div class="messages">
-      <div class="message bot">
-        ¡Hola! Soy CITECH IA, tu asistente virtual. ¿En qué puedo ayudarte?
+  <div class="chat-title">
+    <img src="img/logo.png" alt="CITECH" class="chat-logo" />
+    <span>CITECH IA</span>
+  </div>
+</header>
+
+
+  <!-- CONTENEDOR PRINCIPAL -->
+  <div class="chat-wrapper">
+    <div class="chat-container">
+      <div class="messages">
+        <div class="message bot fade-in">
+          ¡Hola! Soy <strong>CITECH IA</strong>, tu asistente virtual. ¿En qué puedo ayudarte hoy?
+        </div>
+        <div class="message user fade-in">
+          ¿Qué servicios ofrecen?
+        </div>
+        <div class="message bot fade-in">
+          Ofrecemos:<br>
+          • Montaje de PCs a medida<br>
+          • Mantenimiento y optimización<br>
+          • Soporte técnico remoto/presencial<br>
+          • Asesoramiento personalizado
+        </div>
+        <div class="message user fade-in">
+          ¿Me pueden hacer presupuesto para un PC?
+        </div>
+        <div class="message bot fade-in">
+          ¡Claro!<br><br>
+          Podemos hacerte un presupuesto a medida.<br>
+          Solo necesitamos algunos datos:<br><br>
+          • <strong>Uso principal:</strong> (gaming, diseño, oficina, streaming...)<br>
+          • <strong>Presupuesto aproximado:</strong> ¿Cuál es tu rango de precio?<br>
+          • <strong>Preferencias de componentes:</strong> (Intel/AMD, NVIDIA/AMD, etc.)<br>
+          • <strong>¿Incluye periféricos?</strong> (monitor, teclado, ratón...)<br>
+          • <strong>¿Deseas sistema operativo preinstalado?</strong>
+        </div>
+        <div class="message user fade-in">
+          ¿Cómo los contacto?
+        </div>
+        <div class="message bot fade-in">
+          Puedes:<br>
+          • Enviar un mensaje desde nuestra web<br>
+          • Escribirnos a contacto@citech.es</a>
+        </div>
+        <div class="message bot fade-in">
+          ¿Quieres que te redirija al formulario de contacto?
+        </div>
       </div>
-      <div class="message user">
-        ¿Qué servicios ofrecen?
+
+      <!-- ÁREA DE ENTRADA -->
+      <div class="input-area">
+        <textarea placeholder="Escribe tu mensaje..."></textarea>
+        <button class="send-btn" aria-label="Enviar">
+          <i class="fas fa-paper-plane"></i>
+        </button>
       </div>
-      <div class="message bot">
-        Ofrecemos:<br>
-        • Montaje de PCs a medida<br>
-        • Mantenimiento y optimización<br>
-        • Soporte técnico remoto/presencial<br>
-        • Asesoramiento personalizado
-      </div>
-      <div class="message user">
-        ¿Me pueden hacer presupuesto para un PC?
-      </div>
-      <div class="message bot">
-        ¡Claro! 😊<br><br>
-      
-        Podemos hacerte un presupuesto a medida para tu PC sin problema.<br>
-        Solo necesitamos algunos datos para adaptarlo a tus necesidades:<br><br>
-      
-        • <strong>Uso principal del equipo:</strong> (por ejemplo, gaming, diseño, oficina, streaming, etc.)<br>
-        • <strong>Presupuesto aproximado:</strong> ¿Cuál es el rango de precio que tienes en mente?<br>
-        • <strong>Preferencias de componentes:</strong> (Intel o AMD, NVIDIA o AMD, tipo de gabinete, etc.)<br>
-        • <strong>¿Incluye periféricos?</strong> (monitor, teclado, ratón, etc.)<br>
-        • <strong>¿Deseas el sistema operativo preinstalado?</strong><br>
-      </div>      
-      
-      <div class="message user">
-        ¿Cómo los contacto?
-      </div>
-      <div class="message bot">
-        Puedes:<br>
-        • Enviar un mensaje desde nuestra web<br>
-        • Escribirnos a contacto@citech.es<br>
-      </div>
-      <div class="message bot">
-        ¿Te gustaría que te redirija al formulario de contacto?
-      </div>
-    </div>
-    <div class="input-area">
-      <textarea placeholder="Escribe tu mensaje..."></textarea>
-      <button class="send-btn" aria-label="Enviar">
-        <i class="fas fa-paper-plane"></i>
-      </button>
     </div>
   </div>
 
