@@ -899,3 +899,177 @@ section h2 {
   font-weight: bold;
   margin: 10px 0;
 }
+/* === BARRA SUPERIOR === */
+.shop-toolbar {
+  background-color: #1e293b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5%;
+  border-bottom: 1px solid #334155;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #0f172a;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  width: 260px;
+}
+
+.search-bar:focus-within {
+  border-color: #3b82f6;
+  box-shadow: 0 0 8px rgba(59,130,246,0.3);
+}
+
+.search-bar input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #e2e8f0;
+  flex: 1;
+  font-size: 0.95rem;
+  padding-left: 6px;
+}
+
+.search-bar .search-icon {
+  color: #94a3b8;
+}
+
+.header-icons a {
+  color: #e2e8f0;
+  margin-left: 15px;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+.header-icons a:hover {
+  color: #3b82f6;
+}
+
+/* === BREADCRUMB === */
+.breadcrumb {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-bottom: 20px;
+}
+.breadcrumb a {
+  color: #60a5fa;
+  text-decoration: none;
+}
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+/* === SLIDER DIFUMINADO SIN BUGS === */
+.promo-slider {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  aspect-ratio: 16 / 6;
+  margin: 40px auto 60px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.fade-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.fade-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  animation: fadeLoop 15s infinite;
+}
+
+.fade-slide:nth-child(1) { animation-delay: 0s; }
+.fade-slide:nth-child(2) { animation-delay: 5s; }
+.fade-slide:nth-child(3) { animation-delay: 10s; }
+
+.fade-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 2s ease;
+}
+
+/* Suave zoom mientras aparece */
+.fade-slide:nth-child(1) img { animation: zoomIn 15s infinite; animation-delay: 0s; }
+.fade-slide:nth-child(2) img { animation: zoomIn 15s infinite; animation-delay: 5s; }
+.fade-slide:nth-child(3) img { animation: zoomIn 15s infinite; animation-delay: 10s; }
+
+@keyframes fadeLoop {
+  0%, 100% { opacity: 0; }
+  5%, 30% { opacity: 1; }
+  33%, 97% { opacity: 0; }
+}
+
+@keyframes zoomIn {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .promo-slider {
+    aspect-ratio: 16 / 9;
+    max-width: 95%;
+  }
+}
+
+
+/* === TARJETAS === */
+.product-card img:hover, .component-card img:hover {
+  transform: scale(1.05);
+  transition: transform 0.4s ease;
+}
+.product-card, .component-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product-card:hover, .component-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(96,165,250,0.25);
+}
+
+/* === BOTONES === */
+.btn-secondary {
+  background-color: #3b82f6;
+  color: #fff;
+}
+.btn-secondary:hover {
+  background-color: #2563eb;
+}
+
+/* === SECCIONES === */
+section {
+  margin-bottom: 60px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .search-bar {
+    width: 100%;
+  }
+  .slides {
+    animation: none;
+  }
+  .slide {
+    opacity: 1;
+    position: relative;
+  }
+  .promo-slider {
+    height: auto;
+  }
+}

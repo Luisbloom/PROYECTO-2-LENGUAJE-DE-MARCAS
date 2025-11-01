@@ -9,152 +9,128 @@
 </head>
 <body>
 
-  <!-- Checkbox para sidebar móvil -->
-  <input type="checkbox" id="sidebar-toggle" class="sidebar-toggle" />
-
+  <!-- HEADER -->
   <header class="header">
-    <label for="sidebar-toggle" class="menu-btn">☰</label>
     <a href="index.html" class="logo-container">
       <img src="img/logo.png" alt="Logo de CITECH" class="logo-icon" />
       <span class="logo-text">CITECH</span>
     </a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#categorias">Categorías</a></li>
+        <li><a href="#ofertas">Ofertas</a></li>
+        <li><a href="chatbot.html">Asistente IA</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- BARRA SUPERIOR -->
+  <div class="shop-toolbar">
     <div class="search-bar">
       <i class="fas fa-search search-icon"></i>
       <input type="text" placeholder="Buscar productos..." aria-label="Buscar productos" />
     </div>
     <div class="header-icons">
-      <a href="#" aria-label="Carrito de compras"><i class="fas fa-shopping-cart icon"></i></a>
-      <a href="#" aria-label="Mi cuenta"><i class="fas fa-user icon"></i></a>
+      <a href="#" aria-label="Carrito"><i class="fas fa-shopping-cart"></i></a>
+      <a href="#" aria-label="Cuenta"><i class="fas fa-user"></i></a>
     </div>
-  </header>
-
-  <div class="main-container">
-    <nav class="sidebar">
-      <ul>
-        <li><a href="#"><i class="fa-solid fa-computer"></i> Ordenadores de mesa</a></li>
-        <li><a href="#"><i class="fas fa-laptop"></i> Portátiles</a></li>
-        <li><a href="#"><i class="fas fa-microchip"></i> Procesadores</a></li>
-        <li><a href="#"><i class="fas fa-memory"></i> Memoria RAM</a></li>
-        <li><a href="#"><i class="fas fa-microchip"></i> Placas base</a></li>
-        <li><a href="#"><i class="fas fa-hdd"></i> Almacenamiento</a></li>
-        <li><a href="#"><i class="fas fa-video"></i> Tarjetas gráficas</a></li>
-        <li><a href="#"><i class="fas fa-keyboard"></i> Teclados</a></li>
-        <li><a href="#"><i class="fas fa-mouse"></i> Ratones</a></li>
-        <li><a href="#"><i class="fas fa-display"></i> Monitores</a></li>
-        <li><a href="#"><i class="fas fa-headphones"></i> Audio</a></li>
-        <li><a href="#"><i class="fas fa-tablet-alt"></i> Móviles y tablets</a></li>
-        <li><a href="#"><i class="fas fa-gamepad"></i> Accesorios gaming</a></li>
-        <li><a href="#"><i class="fas fa-tags"></i> Ofertas</a></li>
-        <li><a href="#"><i class="fas fa-fire"></i> Gangas del día</a></li>
-      </ul>
-    </nav>
-
-    <main class="content">
-      <!-- BANNERS PROMOCIONALES -->
-      <section class="promo-banners" aria-label="Promociones destacadas">
-        <div class="banner">
-          <img src="img/imagenparadeslizar2.webp" alt="PC Gaming Titán con RTX 4090 - 15% de descuento" />
-        </div>
-        <div class="banner">
-          <img src="img/banner2.webp" alt="Kit Gaming: Teclado, ratón y auriculares con 20% de descuento" />
-        </div>
-      </section>
-
-      <!-- PRODUCTOS DESTACADOS -->
-      <section class="featured-products">
-        <h2>Productos Destacados</h2>
-        <div class="product-grid">
-          <div class="product-card">
-            <img src="img/PC.webp" alt="PC Gaming Titán con RTX 4090, Ryzen 9 y 64GB RAM" />
-            <h3>PC Gaming Titán</h3>
-            <p class="category">Ordenadores de mesa</p>
-            <p class="price">1.899,99 €</p>
-            <a href="#" class="btn-secondary">Ver más</a>
-          </div>
-          <div class="product-card">
-            <img src="img/grafica.webp" alt="Tarjeta gráfica NVIDIA GeForce RTX 4080 16GB GDDR6X" />
-            <h3>RTX 4080</h3>
-            <p class="category">Tarjetas gráficas</p>
-            <p class="price">1.299,00 €</p>
-            <a href="#" class="btn-secondary">Ver más</a>
-          </div>
-          <div class="product-card">
-            <img src="img/monitor.webp" alt="Monitor UltraWide Curvo 34 pulgadas, 144Hz, QHD" />
-            <h3>Monitor UltraWide 34"</h3>
-            <p class="category">Monitores</p>
-            <p class="price">799,00 €</p>
-            <a href="#" class="btn-secondary">Ver más</a>
-          </div>
-          <div class="product-card">
-            <img src="img/teclado.webp" alt="Teclado mecánico RGB con switches Cherry MX" />
-            <h3>Teclado Mecánico K-Pro</h3>
-            <p class="category">Teclados</p>
-            <p class="price">149,50 €</p>
-            <a href="#" class="btn-secondary">Ver más</a>
-          </div>
-        </div>
-      </section>
-
-      <!-- COMPONENTES ESENCIALES -->
-      <section class="components">
-        <h2>Componentes Esenciales</h2>
-        <div class="component-grid">
-          <div class="component-card">
-            <img src="img/procesador.jpg" alt="Procesador AMD Ryzen 5" />
-            <h3>Procesador AMD Ryzen 5</h3>
-            <p class="price">198,68 €</p>
-            <a href="#" class="btn-secondary">Ver más</a>
-          </div>
-          <div class="component-card">
-            <img src="img/placa base.webp" alt="Placa base ASUS ROG Strix Z790-E" />
-            <h3>Placa Base Z790</h3>
-            <p class="price">349,00 €</p>
-            <a href="#" class="btn-secondary">Ver más</a>
-          </div>
-          <div class="component-card">
-            <img src="img/ram.webp" alt="Memoria RAM DDR5 32GB (2x16GB) 6000MHz" />
-            <h3>RAM DDR5 32GB</h3>
-            <p class="price">199,00 €</p>
-            <a href="#" class="btn-secondary">Ver más</a>
-          </div>
-          <div class="component-card">
-            <img src="img/fuente de alimentacion.webp" alt="Fuente de alimentación Corsair RM850x 850W Gold" />
-            <h3>Fuente 850W</h3>
-            <p class="price">149,99 €</p>
-            <a href="#" class="btn-secondary">Ver más</a>
-          </div>
-        </div>
-      </section>
-
-      <!-- OFERTAS DE LA SEMANA -->
-      <section class="offers">
-        <h2>Ofertas de la Semana</h2>
-        <div class="offers-grid">
-          <div class="offer-card">
-            <span class="offer-label">-20%</span>
-            <img src="img/laptop.webp" alt="Portátil Gaming Acer Predator Helios 16" />
-            <div class="offer-info">
-              <h3>Predator Helios 16</h3>
-              <p class="old-price">1.499,00 €</p>
-              <p class="new-price">1.199,00 €</p>
-              <a href="#" class="btn">Ver oferta</a>
-            </div>
-          </div>
-          <div class="offer-card">
-            <span class="offer-label">-25%</span>
-            <img src="img/auriculares.webp" alt="Auriculares inalámbricos ProSound X con cancelación de ruido" />
-            <div class="offer-info">
-              <h3>Auriculares ProSound X</h3>
-              <p class="old-price">169,99 €</p>
-              <p class="new-price">127,49 €</p>
-              <a href="#" class="btn">Ver oferta</a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
   </div>
 
+  <main class="content">
+
+    <!-- BREADCRUMB -->
+    <nav class="breadcrumb">
+      <a href="index.html">Inicio</a> › <span>Tienda</span>
+    </nav>
+
+    <!-- SLIDER -->
+    <section class="promo-slider" aria-label="Promociones destacadas">
+      <div class="fade-slider">
+        <div class="fade-slide"><img src="img/imagenparadeslizar2.webp" alt="Promoción 1"></div>
+        <div class="fade-slide"><img src="img/banner2.webp" alt="Promoción 2"></div>
+        <div class="fade-slide"><img src="img/banner3.webp" alt="Promoción 3"></div>
+      </div>
+    </section>
+
+    <!-- CATEGORÍAS -->
+    <section class="categories" id="categorias">
+      <h2>Categorías</h2>
+      <div class="product-grid">
+        <div class="product-card"><i class="fa-solid fa-computer fa-2x"></i><h3>Ordenadores</h3></div>
+        <div class="product-card"><i class="fas fa-laptop fa-2x"></i><h3>Portátiles</h3></div>
+        <div class="product-card"><i class="fas fa-microchip fa-2x"></i><h3>Componentes</h3></div>
+        <div class="product-card"><i class="fas fa-gamepad fa-2x"></i><h3>Gaming</h3></div>
+        <div class="product-card"><i class="fas fa-headphones fa-2x"></i><h3>Audio</h3></div>
+        <div class="product-card"><i class="fas fa-display fa-2x"></i><h3>Monitores</h3></div>
+      </div>
+    </section>
+
+    <!-- PRODUCTOS DESTACADOS -->
+    <section class="featured-products">
+      <h2>Productos Destacados</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="img/producto_destacado_fuente_de_alimentacion.webp" alt="Corsair RM850x 850W" />
+          <h3>Corsair RM850x 850W</h3>
+          <p class="category">Fuentes de alimentación</p>
+          <p class="price">149,99 €</p>
+          <a href="#" class="btn-secondary">Ver más</a>
+        </div>
+        <div class="product-card">
+          <img src="img/producto_destacado_grafica.webp" alt="Gigabyte RTX 4070" />
+          <h3>Gigabyte RTX 4070</h3>
+          <p class="category">Tarjetas gráficas</p>
+          <p class="price">288,00 €</p>
+          <a href="#" class="btn-secondary">Ver más</a>
+        </div>
+        <div class="product-card">
+          <img src="img/producto_destacado_monitor.webp" alt="Gigabyte G27Q" />
+          <h3>Monitor Gigabyte G27Q</h3>
+          <p class="category">Monitores</p>
+          <p class="price">209,99 €</p>
+          <a href="#" class="btn-secondary">Ver más</a>
+        </div>
+        <div class="product-card">
+          <img src="img/producto_destacado_teclado.webp" alt="Logitech G915 TKL" />
+          <h3>Logitech G915 TKL</h3>
+          <p class="category">Teclados</p>
+          <p class="price">269,00 €</p>
+          <a href="#" class="btn-secondary">Ver más</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFERTAS -->
+    <section class="offers" id="ofertas">
+      <h2>Ofertas de la Semana</h2>
+      <div class="offers-grid">
+        <div class="offer-card">
+          <span class="offer-label">-20%</span>
+          <img src="img/portatiloferta.png" alt="ASUS ROG Strix G15" />
+          <div class="offer-info">
+            <h3>ASUS ROG Strix G15</h3>
+            <p class="old-price">1.499,00 €</p>
+            <p class="new-price">1.199,00 €</p>
+            <a href="#" class="btn">Ver oferta</a>
+          </div>
+        </div>
+        <div class="offer-card">
+          <span class="offer-label">-25%</span>
+          <img src="img/pc_oferta.png" alt="PC Gaming Titán" />
+          <div class="offer-info">
+            <h3>PC Gaming Titán</h3>
+            <p class="old-price">1.899,99 €</p>
+            <p class="new-price">1.424,99 €</p>
+            <a href="#" class="btn">Ver oferta</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
   <footer class="footer">
     <p>© 2025 <strong>CITECH</strong>. Todos los derechos reservados.</p>
   </footer>
