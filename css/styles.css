@@ -1178,3 +1178,32 @@ section {
   .overlay h2 { font-size: 1.7rem; }
   .overlay p { font-size: 1rem; }
 }
+/* === SEPARACIÓN DE MENÚ EN INDEX === */
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-internal, .nav-global {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-internal {
+  border-right: 1px solid rgba(255,255,255,0.3);
+  padding-right: 20px;
+  margin-right: 15px;
+}
+
+.main-nav a {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.main-nav a:hover {
+  color: #60a5fa;
+}

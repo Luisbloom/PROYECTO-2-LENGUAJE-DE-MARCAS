@@ -6,6 +6,7 @@
   <title>CITECH - Tienda</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/tienda.css" />
+  <link rel="icon" type="image/png" href="img/logo.png" />
 </head>
 <body>
 
@@ -16,13 +17,23 @@
         <img src="img/logo.png" alt="CITECH" />
         <span>CITECH</span>
       </a>
+
       <nav class="nav">
-        <a href="index.html">Inicio</a>
-        <a href="#ofertas">Ofertas</a>
-        <a href="#categorias">Categorías</a>
-        <a href="#destacados">Destacados</a>
-        <a href="chatbot.html">Asistente IA</a>
+        <!-- Enlaces globales -->
+        <div class="nav-global">
+          <a href="index.html">Inicio</a>
+          <a href="chatbot.html">Asistente IA</a>
+          <a href="marketplace.html">Marketplace</a>
+        </div>
+
+        <!-- Enlaces internos de la tienda -->
+        <div class="nav-internal">
+          <a href="#ofertas">Ofertas</a>
+          <a href="#categorias">Categorías</a>
+          <a href="#destacados">Destacados</a>
+        </div>
       </nav>
+
       <div class="icons">
         <i class="fas fa-user"></i>
         <i class="fas fa-shopping-cart"></i>
@@ -83,7 +94,7 @@
         <button class="btn">Ver detalles</button>
       </div>
       <div class="product-card">
-        <a href="#img4"><img src="img/producto_destacado_procesador.jpg" alt="Corsair RM850x"></a>
+        <a href="#img4"><img src="img/producto_destacado_procesador.jpg" alt="AMD Ryzen 5 1600 3.2GHz"></a>
         <h3>AMD Ryzen 5 1600 3.2GHz</h3>
         <p class="price">129,99 €</p>
         <button class="btn">Ver detalles</button>
@@ -118,7 +129,7 @@
     </div>
   </section>
 
-  <!-- VISOR DE IMÁGENES (productos y ofertas) -->
+  <!-- VISOR DE IMÁGENES -->
   <div class="img-viewer" id="img1"><a href="#" class="close">&times;</a><img src="img/producto_destacado_grafica.webp" alt=""></div>
   <div class="img-viewer" id="img2"><a href="#" class="close">&times;</a><img src="img/producto_destacado_monitor.webp" alt=""></div>
   <div class="img-viewer" id="img3"><a href="#" class="close">&times;</a><img src="img/producto_destacado_teclado.webp" alt=""></div>
