@@ -301,4 +301,67 @@
   .site-footer {
     margin-top: 80px;
   }
-  
+  /* ---------- EQUIPO (TEAM) ---------- */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* más ancho */
+  gap: 28px;
+  justify-items: center;
+}
+
+.team-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 28px 20px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  transition: transform 0.28s var(--ease), box-shadow 0.28s var(--ease);
+  width: 100%;
+  max-width: 360px; /* tamaño máximo de cada tarjeta */
+}
+
+.team-card:hover {
+  transform: translateY(-8px) rotateX(2deg);
+  box-shadow: 0 18px 40px rgba(2, 6, 23, 0.6);
+}
+
+.avatar-wrap {
+  width: 100%;
+  max-width: 320px; /* tamaño máximo visible */
+  margin: 0 auto 20px;
+  border-radius: 14px;
+  overflow: visible; /* mantiene forma original */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.avatar {
+  width: 100%;
+  height: auto; /* mantiene proporción */
+  display: block;
+  object-fit: contain; /* no deforma */
+  border-radius: 14px; /* opcional, solo suaviza bordes */
+}
+
+.team-card h3 {
+  margin-top: 8px;
+  font-size: 1.1rem;
+  color: #e8f6ff;
+}
+
+.role {
+  color: var(--muted);
+  margin: 8px 0;
+  font-size: 0.95rem;
+}
+
+/* mini insignia o etiqueta debajo del nombre */
+.badge-mini {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
